@@ -1,0 +1,40 @@
+<h1 id="time">00:00:00</h1>
+<button id="clear">clear</button>
+<button id="start">start</button>
+<button id="stop">pause</button>
+
+<%= form_for(@shift) do |f| %>
+  <% if @shift.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shift.errors.count, "error") %> prohibited this shift from being saved:</h2>
+
+      <ul>
+      <% @shift.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :day %><br>
+    <%= f.date_select :day, start_year: 2015, order: [:day, :month, :year], selected: (@shift.day || Date.today)  %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br>
+    <%= f.text_area :desc, cols: 40, rows: 5 %>
+  </div>
+  <div class="field">
+    <%= f.label :commit %><br>
+    <%= f.text_area :commit, cols: 40, rows: 5 %>
+  </div>
+  <div class="field">
+    <%= f.label :hours %><br>
+    <%= f.text_field :hours, id: "tot-hours" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit %>
+    <button id="save-and-begin">Save and begin new</button>
+  </div>
+<% end %>

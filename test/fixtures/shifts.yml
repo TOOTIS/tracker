@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day: MyString
+  desc: MyString
+  commit: MyString
+  hours: MyString
+
+two:
+  day: MyString
+  desc: MyString
+  commit: MyString
+  hours: MyString

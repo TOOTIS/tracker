@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @shift.day %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= simple_format(@shift.desc) %>
+</p>
+
+<p>
+  <strong>Commit:</strong>
+  <%= simple_format(@shift.commit) %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @shift.hours %>
+</p>
+
+<%= link_to 'Edit', edit_shift_path(@shift) %> |
+<%= link_to 'New', new_shift_path %> |
+<%= link_to 'Back', shifts_path %>
